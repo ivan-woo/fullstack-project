@@ -82,18 +82,19 @@ const TravelPage = () => {
     try {
       const response = await fetch("/api/survey/create/", requestOptions);
       const data = await response.json();
-      if (data.status === "success") {
-        alert(`${data.message}`);
-        setFormData({
-          name: "",
-          email: "",
-          haveTravelPartners: "",
-          accommodation: "",
-          nextDestination: "",
-        });
+      if (data.status === "error") {
+        throw new Error(data.message);
       }
+      alert(`${data.message}`);
+      setFormData({
+        name: "",
+        email: "",
+        haveTravelPartners: "",
+        accommodation: "",
+        nextDestination: "",
+      });
     } catch (e) {
-      alert("Unable to record responses. Please try again.");
+      alert(e);
     }
   };
 
