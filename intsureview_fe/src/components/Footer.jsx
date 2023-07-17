@@ -42,7 +42,7 @@ const PHONE = "(123) 456-7890";
 const FACEBOOK = "https://www.facebook.com";
 const INSTAGRAM = "https://www.instagram.com";
 
-const Footer = ({ email, phone, facebook, instagram }) => {
+const Footer = () => {
   return (
     <StyledFooter>
       <StyledWrapper>
